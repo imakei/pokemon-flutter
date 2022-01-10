@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_pokemon/model/pokemon.dart';
-import 'package:flutter_pokemon/pokemon/pokemon_page.dart';
-import 'package:flutter_pokemon/pokemon_list/pokemon_list_controller_provider.dart';
+import 'package:flutter_pokemon/page/pokemon/pokemon_page.dart';
+import 'package:flutter_pokemon/page/pokemon_list/pokemon_list_controller_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class PokemonListPage extends HookConsumerWidget {
@@ -43,7 +43,7 @@ class PokeListItem extends StatelessWidget {
         width: 50,
       ),
       title: Text(data.name),
-      subtitle: Text(data.type),
+      subtitle: Text(data.types[0]),
       onTap: () => {
         // TODO: Navigation
         Navigator.of(context).push(

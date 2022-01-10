@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pokemon/model/pokemon.dart';
-import 'package:flutter_pokemon/pokemon/pokemon_controller_provider.dart';
+import 'package:flutter_pokemon/page/pokemon/pokemon_controller_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class PokemonPage extends HookConsumerWidget {
@@ -36,9 +36,19 @@ class PokeItem extends HookConsumerWidget {
               data.name,
               style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
             ),
-            Chip(
-              label: Text(data.type),
-              backgroundColor: Colors.yellow,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: data.types
+                  .map(
+                    (type) => Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      child: Chip(
+                        label: Text(type),
+                        backgroundColor: Colors.yellow,
+                      ),
+                    ),
+                  )
+                  .toList(),
             ),
           ],
         ),

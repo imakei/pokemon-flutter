@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pokemon/pokemon_list/pokemon_list_page.dart';
+import 'package:flutter_pokemon/page/pokemon_list/pokemon_list_page.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
